@@ -1,0 +1,18 @@
+version: '3'  # requires Docker Compose 1.13 or later
+
+# This section describes the various containers (services).
+services:
+
+  consumer:
+    # If needed, Docker Compose will automatically run consumer/Dockerfile.
+    build: consumer
+
+    # Environment variables:
+    environment:
+      AMQP_URL: 'amqp://guest:guest@YOUR_IP:5672'
+      USER: ''
+      PWD: ''
+      SMTP_SERVER: 'smtp.gmail.com'
+      FROM: ''
+      TO: ''
+
